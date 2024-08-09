@@ -7,9 +7,9 @@ spec:
   containers:
     - name: busybox
       image: busybox
-      command: ["sh", "-c", "echo Hello Team, This is Persistnent Volume Claim >> /output/success.txt"]
+      command: ["sh", "-c", "echo Hello Team, This is Persistnent Volume Claim >> /tmp/success.txt"]
       volumeMounts:
-      - mountPath: /output
+      - mountPath: /tmp
         name: my-pv
   volumes:
     - name: my-pv
