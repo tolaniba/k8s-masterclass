@@ -12,7 +12,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/data/redis
+    path: /tmp
 
 kubectl apply -f create-pv.yaml
 Note that you will have to create this directory /mnt/data/redis on a node in the cluster.
@@ -58,7 +58,7 @@ spec:
           ports:
             - containerPort: 6379
           volumeMounts:
-            - mountPath: /var/lib/redis/
+            - mountPath: /tmp
               name: redis-volume
       volumes:
         - name: redis-volume
